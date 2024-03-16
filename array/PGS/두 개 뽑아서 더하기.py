@@ -29,9 +29,7 @@ def solution(numbers):
                 continue
             
             data = fix + numbers[j]
-        
-            if data not in answer:
-                answer.append(data)
-                
-    answer.sort()
+            answer.append(data)
+    
+    answer = sorted(set(answer))
     return answer
