@@ -17,3 +17,25 @@ print(sorted_list3)
 dict = {'wirtz': 8.8, 'grimaldo': 9, 'xhaka': 7.3, 'hincapie':8}
 result = sorted(dict, key = lambda x : dict[x], reverse=True)
 print(result)
+
+
+dict = {
+    	2: 3,
+    	1: 3,
+    	3: 5,
+    	6: 3,
+    	5: 2
+}
+
+
+
+
+my_dict = {'apple': 3, 'banana': 1, 'cherry': 2}
+
+# 딕셔너리의 값을 기준으로 정렬하여 (key, value) 튜플의 리스트를 생성합니다.
+sorted_items = sorted(my_dict.items(), key=lambda x: x[1])
+
+# 정렬된 (key, value) 튜플 리스트에서 키만 추출하여 리스트로 만듭니다.
+sorted_keys = [item[0] for item in sorted_items]
+
+print(sorted_keys)
