@@ -20,40 +20,50 @@
 '''
 def solution(s):
     answer = 0
-    stack = []
+    
     if len(s) == 1:
         return answer
     
     for i in range(0, len(s)):
-        
+        stack = []
         result = True
         
-        if i > 0:
+        if i == 0:
+            pass
+        else:
             tmp = s
             s = tmp[1:] + tmp[0]
-        
-        for j in s:
+        print(s)
+       
+        for j in range(0,len(s)):
             
-            if j == '[' or j == '(' or j == '{':
-                stack.append(j)
+            if s[j] == '[' or s[j] == '(' or s[j] == '{':
+                stack.append(s[j])
+                continue
             
-            elif len(stack) == 0 and j in [']', '}', ')']:
+            elif s[j] == ']' or s[j] == ')' or s[j] == '}':
+                
+                if j == 0 or len(stack) == 0:
+                    print(f"j: {j}, s[j]: {s[j]}")
                     result = False
                     break
-
-            else:
-                top = stack[-1]
-                if top == '[' and j ==']':
-                    stack.pop()    
-                elif top == '{' and j =='}':
-                    stack.pop()
-                elif top == '(' and j ==')':
-                    stack.pop()
+                    
                 else:
-                    result = False
-                    break
-        
-        if result == True:
+                    top = stack[-1]
+                    if top == '[' and s[j] ==']':
+                        stack.pop()    
+                    elif top == '{' and s[j] =='}':
+                        stack.pop()
+                    elif top == '(' and s[j] ==')':
+                        stack.pop()
+                    else:
+                        result = False
+                        break
+        # []]]]
+        if result == True and len(stack) == 0:
             answer += 1
                     
     return answer
+    
+
+print(solution("{(["))
