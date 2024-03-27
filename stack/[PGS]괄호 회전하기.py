@@ -33,7 +33,6 @@ def solution(s):
         else:
             tmp = s
             s = tmp[1:] + tmp[0]
-        print(s)
        
         for j in range(0,len(s)):
             
