@@ -23,3 +23,10 @@ want = ["banana", "apple", "rice", "pork", "pot"]
 number = [3, 2, 2, 2, 1]
 discount = ["chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"]
 print(solution(want,number,discount))
+
+dic = {1:2, 3:4}
+print(dic.get(4))
+print(dic.get(3))
+print(dic.get(4), 0)
+
+
